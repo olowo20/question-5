@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class InvestmentCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the number of members
+        System.out.print("Enter the number of members: ");
+        int numMembers = scanner.nextInt();
+
+        // Prompt the user to enter the principal amount and interest rate
+        System.out.println("Enter the principal amount and interest rate for each member:");
+        
+        // Loop through each member
+        for (int i = 1; i <= numMembers; i++) {
+            System.out.println("Member " + i + ":");
+            
+            // Input principal amount and interest rate
+            System.out.print("Principal amount: ");
+            double principal = scanner.nextDouble();
+            System.out.print("Interest rate (in percentage): ");
+            double interestRate = scanner.nextDouble();
+            
+            // Prompt the user to enter the period of investment
+            System.out.print("Enter the period of investment (in years): ");
+            int years = scanner.nextInt();
+
+            // Calculate the value of investment after the time frame elapses
+            double interest = principal * (interestRate / 100) * years;
+            double investmentValue = principal + interest;
+            
+            // Display the result
+            System.out.println("The value of investment after " + years + " years: " + investmentValue);
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
+
